@@ -1,10 +1,11 @@
 import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 export default function CartItem({item,value}) {
     const {id, img, title, count, price, total} =item;
     const {increment, decrement, removeProduct} = value;
     return (
-        <div className="row">
+        <div className="row mb-2">
             <div className="text-center col-lg-2 col-md-2 text-capitalize">
                 <img src={img} alt="product" style={{width: "5rem",height:"5rem"}}/>
             </div>
@@ -12,18 +13,18 @@ export default function CartItem({item,value}) {
                 <p>{title}</p>
             </div>
             <div className="text-center col-lg-2 col-md-2 text-capitalize">
-                <span>${price}</span>
+                <span className="d-lg-none">price:</span><span>${price}</span>
             </div>
             <div className="text-center col-lg-2 col-md-2 text-capitalize">
-                <span className="btn btn-black mx-auto" onClick={() => {decrement(id)}}>-</span>
-                <span className="btn btn-black mx-auto">{count}</span>
-                <span className="btn btn-black mx-auto" onClick={() => {increment(id)}}>+</span>
+                <span className="btn btn-black mx-1" onClick={() => {decrement(id)}}>-</span>
+                <span className="btn btn-black mx-1">{count}</span>
+                <span className="btn btn-black mx-1" onClick={() => {increment(id)}}>+</span>
             </div>
             <div className="text-center col-lg-2 col-md-2 text-capitalize">
-                <span onClick={() => {removeProduct(id)}}>remove</span>
+                <span id="trash" onClick={() => {removeProduct(id)}}><FontAwesomeIcon icon={faTrashAlt}/></span>
             </div>
             <div className="text-center col-lg-2 col-md-2 text-capitalize">
-                <span>${total}</span>
+            <span className="d-lg-none">total:</span><span>${total}</span>
             </div>
         </div>
     )

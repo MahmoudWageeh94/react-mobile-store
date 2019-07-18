@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../logo.svg'
-
+import ButtonContainer from './button'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export default class NavBar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-sm navbar-dark  bg-dark px-sm-5">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-sm-5">
                 <Link to="/">
                     <img className="navbar-brand" src={logo} alt="Brand" />
                 </Link>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
+                    <ul className="navbar-nav align-items-center">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">Product</Link>
+                            <Link to="/" className="nav-link">Products</Link>
                         </li>
                     </ul>
                     <Link to="/cart" className="ml-auto">
-                        <button>
-                            <i className="fas fa-cart-plus"></i>
+                        <ButtonContainer cart>
+                        <FontAwesomeIcon icon={faShoppingCart}/>
                             My Cart
-                        </button>
+                        </ButtonContainer>
                     </Link>
-                </div>
             </nav>
         )
     }

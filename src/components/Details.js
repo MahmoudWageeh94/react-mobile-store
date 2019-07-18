@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import {ProductConsumer} from './context'
 import {Link} from 'react-router-dom'
-
+import ButtonContainer from './button'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export default class Details extends Component {
 
@@ -13,7 +15,7 @@ export default class Details extends Component {
                         const {id, company, title, img, price, info, inCart} = value.productDetaile;
                         return(
                             <div className="container">
-                                <div className="row">
+                                <div className="row py-5">
                                     <div className="mx-auto mb-10 text-center">
                                         <h1 className="text-weight-bold">{title}</h1>
                                     </div>
@@ -25,26 +27,28 @@ export default class Details extends Component {
                                     <div className="col-lg-6 col-10 col-sm-6">
                                         <h2>{title}</h2>
                                         <p className="text-mute text-uppercase">
-                                            powerd by: <span className="text-mute">{company}</span>
+                                            powerd by: <span>{company}</span>
                                         </p>
-                                        <p>price: ${price}</p>
-                                        <h4 className="text-weight-bold  text-mute text-uppercase">some info:</h4>
-                                        <p>{info}</p>
+                                        <p className="text-muted">price: ${price}</p>
+                                        <h4 className="text-weight-bold  text-uppercase">some info:</h4>
+                                        <p  className="text-muted">{info}</p>
                                         <Link to="/">
-                                            <button className="text-capitalize btn-primary mx-3 p-2">back to product</button>
+                                            <ButtonContainer className="text-capitalize mx-3 p-2">back to product</ButtonContainer>
                                         </Link>
-                                        <button 
-                                        className="text-capitalize btn-success p-2" 
+                                        <ButtonContainer 
+                                        className="text-capitalize  p-2"
+                                        cart 
                                         disabled={inCart?true:false}
+                                        title="add to cart"
                                         onClick={() =>{
                                             value.addToCart(id)
                                             value.openModal(id)
                                         }}
                                         >
                                             {
-                                                inCart?'Added to cart':'Add to cart'
+                                                inCart?'Added to cart':(<FontAwesomeIcon icon={faShoppingCart}/>)
                                             }
-                                        </button>
+                                        </ButtonContainer>
                                     </div>
                                 </div>
                             </div>

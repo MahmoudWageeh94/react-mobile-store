@@ -11,7 +11,7 @@ export default class Cart extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container py-5">
                 <ProductConsumer>
                     {
                         (value) => {

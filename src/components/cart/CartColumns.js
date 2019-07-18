@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function CartColumns() {
     return (
-        <div className="container-fluid mt-10">
+        <div className="container-fluid d-none d-lg-block mt-1">
             <div className="row">
                 <div className="col-lg-2 text-center text-capitalize mx-auto">
                     <h3>products</h3>
                 </div>
                 <div className="col-lg-2 text-center text-capitalize mx-auto">
-                    <h3>product name</h3>
+                    <h3>name</h3>
                 </div>
                 <div className="col-lg-2 text-center text-capitalize mx-auto">
                     <h3>price</h3>

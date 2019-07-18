@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {ProductConsumer} from './context'
 import {Link} from 'react-router-dom'
 import style from 'styled-components'
+import ButtonContainer from './button'
 
 
 export default class modal extends Component {
@@ -20,16 +21,16 @@ export default class modal extends Component {
                                 <ModalWrapper>
                                     <div className="container">
                                         <div className="row">
-                                            <div id="modal" className="col-md-6 col-sm-4 col-8 mx-auto text-center p-5 text-capitalize">
+                                            <div id="modal" className="col-md-6 col-lg-4 col-8 mx-auto text-center p-5 text-capitalize">
                                                 <h2>Added to cart</h2>
                                                 <img src={img} className="img-fluid" alt="product"/>
                                                 <h4>{title}</h4>
                                                 <h5>price: ${price}</h5>
                                                 <Link to="/">
-                                                    <button onClick={() => closeModal()}>Continue shop</button>
+                                                    <ButtonContainer onClick={() => closeModal()}>Continue shop</ButtonContainer>
                                                 </Link>
                                                 <Link to="/cart">
-                                                    <button onClick={() => closeModal()}>go to cart</button>
+                                                    <ButtonContainer cart onClick={() => closeModal()}>go to cart</ButtonContainer>
                                                 </Link>
                                             </div>
                                         </div>
