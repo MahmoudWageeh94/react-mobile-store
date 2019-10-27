@@ -56,18 +56,13 @@ body{
 }
 footer{
   background: var(--blue);
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
 }
 footer p{
   padding-top: 10px;
   color: var(--white);
 }
 footer p span{
-  color: var(--orange);
+  color: var(--white);
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
 }

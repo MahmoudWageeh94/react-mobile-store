@@ -2,7 +2,7 @@ import style from 'styled-components'
 
 const ButtonContainer = style.button`
     background: transparent;
-    border: 2px solid var(--orange);
+    border: 2px solid var(--white);
     border-color:${props => props.cart? "var(--orange)" : "var(--primary)"};
     border-radius: 8px;
     color:${props => props.cart? "var(--orange)" : "var(--primary)"};
